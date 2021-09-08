@@ -112,12 +112,17 @@ function mouseClicked() {
   }
 }
 
-let button = document.querySelector(".playMe");
-button.addEventListener("click", function () {
+let playButton = document.querySelector(".playMe");
+playButton.addEventListener("click", function () {
   play = !play;
   if (play) {
-    button.innerHTML = "Pause";
+    playButton.innerHTML = "Pause";
   } else {
-    button.innerHTML = "Play";
+    playButton.innerHTML = "Play";
   }
+});
+
+let clearButton = document.querySelector(".clear");
+clearButton.addEventListener("click", function () {
+  grid = createGrid();
 });
