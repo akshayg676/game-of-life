@@ -8,7 +8,7 @@
   text-align: center;
   padding: 0.1em 2em;
   font-size: 3.2em;
-  color: indigo;
+  color: navy;
 }
 
 .button {
@@ -16,7 +16,7 @@
   align-items: center;
   justify-content: center;
 }
-.playMe,
+/* .playMe,
 .clear {
   padding: 1em;
   margin: 0.2em 1em 2em;
@@ -25,4 +25,41 @@
   color: #fff;
   font-size: 1em;
   font-weight: 700;
+} */
+
+.playMe,
+.clear {
+  width: 150px;
+  height: 45px;
+  /* margin-top: 1em; */
+  margin: 0.2em 1em 2em;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  color: #fff;
+  background-color: #22bb7e;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.playMe:hover,
+.clear:hover {
+  background-color: inherit;
+  border: 3px solid #22bb7e;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  color: #000;
+  transform: translateY(-7px);
+}
+.playMe:active,
+.clear:active {
+  background-color: inherit;
+  border: 3px solid #22bb7e;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  color: #000;
+  transform: translateY(-2px);
 }
