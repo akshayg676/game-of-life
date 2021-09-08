@@ -125,4 +125,12 @@ playButton.addEventListener("click", function () {
 let clearButton = document.querySelector(".clear");
 clearButton.addEventListener("click", function () {
   grid = createGrid();
+  if (play) {
+    play = !play;
+    if (play) {
+      playButton.innerHTML = "Pause";
+    } else {
+      playButton.innerHTML = "Play";
+    }
+  }
 });
