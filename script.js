@@ -65,8 +65,7 @@ function nextGeneration() {
 // called once at the beginning of the program
 function setup() {
   createCanvas(600, 600); // created a 600*600 canvas
-  console.log(grid);
-  grid[10][15] = true;
+  frameRate(5); // 5 frames per second
 }
 
 // called repeatedly
