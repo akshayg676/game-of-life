@@ -98,3 +98,10 @@ function draw() {
     line((i / cols) * width, 0, (i / cols) * width, width); // width = 600(canvas width)
   }
 }
+
+// mouse click interaction
+function mouseClicked() {
+  let row = Math.floor((mouseY / height) * rows);
+  let col = Math.floor((mouseX / width) * cols);
+  grid[row][col] = !grid[row][col];
+}
