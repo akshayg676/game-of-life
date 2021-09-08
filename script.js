@@ -19,6 +19,48 @@ function createGrid() {
   }
   return result;
 }
+
+function nextGeneration() {
+  let newGrid = createGrid();
+  for (i = 0; i < rows; i++) {
+    for (j = 0; j < cols; j++) {
+      //to get the number of alive neighbour
+      let directions = [
+        [1, 0],
+        [1, -1],
+        [0, -1],
+        [-1, -1],
+        [-1, 0],
+        [-1, 1],
+        [0, 1],
+        [1, 1],
+      ];
+      let aliveNeighbour = 0;
+      for (d of directions) {
+        let neighbourRow = i + d[0];
+        let neighbourCol = j + d[1];
+        if (
+          neighbourRow >= 0 &&
+          neighbourCol >= 0 &&
+          neighbourRow < rows &&
+          neighbourCol < cols
+        )
+          if (grid[neighbourRow][neighbourCol]) {
+            aliveNeighbour++;
+          }
+      }
+
+      //to check the new cell is dead or alive
+      if (grid[i][j]) {
+        newGrid[i][j] = aliveNeighbour == 2 || aliveNeighbour == 3;
+      } else {
+        newGrid[i][j] = aliveNeighbour == 3;
+      }
+    }
+  }
+  grid = newGrid;
+}
+
 // called once at the beginning of the program
 function setup() {
   createCanvas(600, 600); // created a 600*600 canvas
