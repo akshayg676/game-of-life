@@ -64,7 +64,7 @@ function nextGeneration() {
 
 // called once at the beginning of the program
 function setup() {
-  createCanvas(600, 600); // created a 600*600 canvas
+  createCanvas(500, 500); // created a 600*600 canvas
   frameRate(5); // 5 frames per second
 }
 
