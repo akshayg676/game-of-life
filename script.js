@@ -6,6 +6,7 @@
 
 let rows = 20,
   cols = 20;
+let play = false;
 let grid = createGrid();
 
 function createGrid() {
@@ -97,11 +98,27 @@ function draw() {
   for (let i = 0; i <= cols; i++) {
     line((i / cols) * width, 0, (i / cols) * width, width); // width = 600(canvas width)
   }
+
+  if (play) {
+    nextGeneration();
+  }
 }
 
 // mouse click interaction
 function mouseClicked() {
   let row = Math.floor((mouseY / height) * rows);
   let col = Math.floor((mouseX / width) * cols);
-  grid[row][col] = !grid[row][col];
+  if (row >= 0 && col >= 0 && row < rows && col < cols) {
+    grid[row][col] = !grid[row][col];
+  }
 }
+
+let button = document.querySelector(".playMe");
+button.addEventListener("click", function () {
+  play = !play;
+  if (play) {
+    button.innerHTML = "Pause";
+  } else {
+    button.innerHTML = "Play";
+  }
+});
